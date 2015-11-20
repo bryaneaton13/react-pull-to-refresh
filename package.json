@@ -33,15 +33,11 @@
     "babel-loader": "5.3.2",
     "eslint": "1.6.0",
     "eslint-plugin-react": "3.5.1",
-    "hammerjs": "2.0.4",
-    "react": "0.14.2",
+    "react": "^0.14.3",
     "react-dom": "0.14.2",
     "rimraf": "^2.4.4",
     "webpack": "1.12.2",
     "webpack-dev-server": "1.12.0"
-  },
-  "peerDependencies": {
-    "react": "^0.14.2"
   },
   "tags": [
     "react",
@@ -55,5 +51,8 @@
     "pull-to-refresh",
     "refresh",
     "web-pull-to-refresh"
-  ]
+  ],
+  "dependencies": {
+    "hammerjs": "^2.0.4"
+  }
 }
