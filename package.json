@@ -1,7 +1,7 @@
 {
   "name": "react-pull-to-refresh",
   "version": "1.0.0",
-  "description": "web pull to refresh",
+  "description": "A React component for pull to refresh on the web.",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",

@@ -1,10 +1,12 @@
 # react-pull-to-refresh
 
+`npm install react-pull-to-refresh`
+
 A pull to refresh component for the web.
 
 Based on Andy Peatling's [Pull to Refresh for the Web](https://github.com/apeatling/web-pull-to-refresh)
 
-![](https://github.com/bryaneaton13/react-pull-to-refresh/master/docs/demo.gif)
+![Demo GIF](https://github.com/bryaneaton13/react-pull-to-refresh/blob/master/docs/demo.gif)
 
 ## Usage
 
