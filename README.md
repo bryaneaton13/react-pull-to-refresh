@@ -4,6 +4,8 @@ A pull to refresh component for the web.
 
 Based on Andy Peatling's [Pull to Refresh for the Web](https://github.com/apeatling/web-pull-to-refresh)
 
+![](https://github.com/bryaneaton13/react-pull-to-refresh/blob/master/docs/demo.gif)
+
 ## Usage
 
 Your refresh handler function takes in `resolve` and `reject` to tell the PullToRefresh component when it's finished.
