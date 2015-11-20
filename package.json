@@ -2,7 +2,7 @@
   "name": "react-pull-to-refresh",
   "version": "1.0.1",
   "description": "A React component for pull to refresh on the web.",
-  "main": "./dist/react-pull-to-refresh.min.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bryaneaton13/react-pull-to-refresh.git"
@@ -15,9 +15,10 @@
   "scripts": {
     "test": "eslint lib examples && NODE_ENV=test karma start karma.conf.js --single-run --browsers Chrome",
     "start": "webpack-dev-server --inline --config webpack.config.js --content-base examples/",
-    "build": "npm run build-file && npm run build-minify",
-    "build-minify": "MINIFY=1 npm run build-file",
+    "build": "npm run build-lib && npm run build-file && npm run build-minify",
+    "build-lib": "babel src --out-dir lib",
     "build-file": "webpack --config webpack.build.js",
+    "build-minify": "MINIFY=1 npm run build-file",
     "prepublish": "npm run build"
   },
   "authors": [

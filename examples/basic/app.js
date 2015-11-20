@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactPullToRefresh from '../../lib/index'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactPullToRefresh from '../../src/index';
 
-let count = 1
+let count = 1;
 let App = React.createClass({
 
   getInitialState() {
@@ -10,22 +10,22 @@ let App = React.createClass({
       items: [
         <div key={'item-' + count}>Item {count++}</div>
       ]
-    }
+    };
   },
 
   handleRefresh(resolve, reject) {
-    let self = this
+    let self = this;
     setTimeout(function () {
-      self.addItem() ? resolve() : reject()
-    }, 500)
+      self.addItem() ? resolve() : reject();
+    }, 500);
   },
 
   addItem() {
-    this.state.items.push(<div key={'item-' + count}>Item {count++}</div>)
+    this.state.items.push(<div key={'item-' + count}>Item {count++}</div>);
     this.setState({
       items: this.state.items
-    })
-    return true
+    });
+    return true;
   },
 
   render() {
@@ -38,8 +38,8 @@ let App = React.createClass({
           {this.state.items}
         </div>
       </ReactPullToRefresh>
-    )
+    );
   }
-})
+});
 
-ReactDOM.render(<App/>, document.getElementById('container'))
+ReactDOM.render(<App/>, document.getElementById('container'));
