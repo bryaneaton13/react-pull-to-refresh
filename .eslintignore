@@ -1,0 +1,13 @@
+# node_modules ignored by default
+
+# Ignore files compiled from tests
+**/*-test.js
+
+# Ignore root level files
+*.build.js
+*.config.js
+*.conf.js
+
+# Ignore built files except build/index.js
+lib/index.js
+lib/pull-to-refresh/
