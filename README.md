@@ -43,5 +43,40 @@ Where you want to render the component:
 Use the CSS from the example or from [here](https://github.com/apeatling/web-pull-to-refresh) as a starting point.
 
 
+## All props
+
+React.PropTypes
+
+- **onRefresh**
+ - function *(required)*
+- **icon**
+ - React element
+ - *default*:
+```html
+ <span className="genericon genericon-next"></span>
+```
+- **loading**
+ - element
+ - *default*:
+```html
+<div className="loading">
+  <span className="loading-ptr-1"></span>
+  <span className="loading-ptr-2"></span>
+  <span className="loading-ptr-3"></span>
+</div>
+```
+- **disabled**
+ - boolean
+- **className**
+ - string
+- **style**
+ - object
+- **distanceToRefresh**
+ - number
+ - *default*: `70`
+- **resistance**
+ - number
+ - *default*: `2.5`
+
 ## Thanks
 [Andy Peatling](http://apeatling.com/)
