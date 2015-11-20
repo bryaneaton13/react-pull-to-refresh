@@ -15,10 +15,11 @@
   "scripts": {
     "test": "eslint lib examples && NODE_ENV=test karma start karma.conf.js --single-run --browsers Chrome",
     "start": "webpack-dev-server --inline --config webpack.config.js --content-base examples/",
-    "build": "npm run build-lib && npm run build-file && npm run build-minify",
-    "build-lib": "babel src --out-dir lib",
-    "build-file": "webpack --config webpack.build.js",
-    "build-minify": "MINIFY=1 npm run build-file",
+    "clean": "rimraf lib dist",
+    "build": "npm run clean && npm run build:lib && npm run build:file && npm run build:minify",
+    "build:lib": "babel src --out-dir lib",
+    "build:file": "webpack --config webpack.build.js",
+    "build:minify": "MINIFY=1 npm run build:file",
     "prepublish": "npm run build"
   },
   "authors": [
@@ -35,6 +36,7 @@
     "hammerjs": "2.0.4",
     "react": "0.14.2",
     "react-dom": "0.14.2",
+    "rimraf": "^2.4.4",
     "webpack": "1.12.2",
     "webpack-dev-server": "1.12.0"
   },
