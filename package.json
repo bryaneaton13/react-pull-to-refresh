@@ -1,14 +1,14 @@
 {
   "name": "react-pull-to-refresh",
-  "version": "0.0.0",
-  "description": "react component",
+  "version": "1.0.0",
+  "description": "web pull to refresh",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": ".git"
+    "url": "https://github.com/bryaneaton13/react-pull-to-refresh.git"
   },
   "homepage": "",
-  "bugs": "https://github.com/bryaneaton13/react-pull-to-refresh/issue",
+  "bugs": "https://github.com/bryaneaton13/react-pull-to-refresh/issues",
   "directories": {
     "example": "examples"
   },
@@ -30,17 +30,6 @@
     "eslint": "1.6.0",
     "eslint-plugin-react": "3.5.1",
     "hammerjs": "2.0.4",
-    "karma": "0.13.11",
-    "karma-chrome-launcher": "0.2.1",
-    "karma-cli": "0.1.1",
-    "karma-firefox-launcher": "0.1.6",
-    "karma-ie-launcher": "0.2.0",
-    "karma-mocha": "0.2.0",
-    "karma-phantomjs-launcher": "0.2.1",
-    "karma-safari-launcher": "0.1.1",
-    "karma-sourcemap-loader": "0.3.6",
-    "karma-webpack": "1.7.0",
-    "mocha": "2.3.3",
     "react": "0.14.2",
     "react-dom": "0.14.2",
     "webpack": "1.12.2",
@@ -52,11 +41,14 @@
   "tags": [
     "react",
     "pull-to-refresh",
-    "refresh"
+    "refresh",
+    "web-pull-to-refresh"
   ],
   "keywords": [
     "react",
+    "react-component",
     "pull-to-refresh",
-    "refresh"
+    "refresh",
+    "web-pull-to-refresh"
   ]
 }
