@@ -42,7 +42,7 @@ Where you want to render the component:
 
 
 ## CSS
-Use the CSS from the example or from [here](https://github.com/apeatling/web-pull-to-refresh) as a starting point.
+Use the CSS from the example or from [the basic example](examples/basic/app.css) as a starting point.
 
 
 ## All props
