@@ -24,7 +24,8 @@ export default class ReactPullToRefresh extends Component {
         ptrEl: this.refs.ptr,
         distanceToRefresh: this.props.distanceToRefresh || undefined,
         loadingFunction: this.handleRefresh,
-        resistance: this.props.resistance || undefined
+        resistance: this.props.resistance || undefined,
+        hammerOptions: this.props.hammerOptions || undefined
       });
       this.setState({
         initialized: true
@@ -82,5 +83,6 @@ ReactPullToRefresh.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   distanceToRefresh: PropTypes.number,
-  resistance: PropTypes.number
+  resistance: PropTypes.number,
+  hammerOptions: PropTypes.object
 };
