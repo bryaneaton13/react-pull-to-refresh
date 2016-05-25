@@ -79,6 +79,8 @@ React.PropTypes
 - **resistance**
  - number
  - *default*: `2.5`
+- **hammerOptions**
+ - object
 
 ## Thanks
 [Andy Peatling](http://apeatling.com/)
