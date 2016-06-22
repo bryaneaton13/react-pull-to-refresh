@@ -13,8 +13,8 @@ export default function WebPullToRefresh() {
 		// ID of the element holding pull to refresh loading area
 		ptrEl: 'ptr',
 
-		// ID of the wrapper element holding scollable
-		bodyEl: 'body',
+		// wrapper element holding scollable
+		bodyEl: document.body,
 
 		// Number of pixels of panning until refresh
 		distanceToRefresh: 70,
@@ -45,7 +45,7 @@ export default function WebPullToRefresh() {
 	/**
 	 * Easy shortener for handling adding and removing body classes.
 	 */
-	var bodyClass = document.body.classList;
+	var bodyClass = defaults.bodyEl.classList;
 
 	/**
 	 * Initialize pull to refresh, hammer, and bind pan events.
@@ -57,7 +57,7 @@ export default function WebPullToRefresh() {
 		options = {
 			contentEl: params.contentEl || document.getElementById( defaults.contentEl ),
 			ptrEl: params.ptrEl || document.getElementById( defaults.ptrEl ),
-			bodyEl: params.bodyEl || document.getElementById( defaults.bodyEl ),
+			bodyEl: params.bodyEl || defaults.bodyEl,
 			distanceToRefresh: params.distanceToRefresh || defaults.distanceToRefresh,
 			loadingFunction: params.loadingFunction || defaults.loadingFunction,
 			resistance: params.resistance || defaults.resistance,
