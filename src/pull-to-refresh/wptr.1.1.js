@@ -13,6 +13,9 @@ export default function WebPullToRefresh() {
 		// ID of the element holding pull to refresh loading area
 		ptrEl: 'ptr',
 
+		// ID of the wrapper element holding scollable
+		bodyEl: 'body',
+
 		// Number of pixels of panning until refresh
 		distanceToRefresh: 70,
 
@@ -54,6 +57,7 @@ export default function WebPullToRefresh() {
 		options = {
 			contentEl: params.contentEl || document.getElementById( defaults.contentEl ),
 			ptrEl: params.ptrEl || document.getElementById( defaults.ptrEl ),
+			bodyEl: params.bodyEl || document.getElementById( defaults.bodyEl ),
 			distanceToRefresh: params.distanceToRefresh || defaults.distanceToRefresh,
 			loadingFunction: params.loadingFunction || defaults.loadingFunction,
 			resistance: params.resistance || defaults.resistance,
@@ -63,6 +67,8 @@ export default function WebPullToRefresh() {
 		if ( ! options.contentEl || ! options.ptrEl ) {
 			return false;
 		}
+
+		bodyClass = options.bodyEl.classList;
 
 		var h = new Hammer( options.contentEl, options.hammerOptions );
 
