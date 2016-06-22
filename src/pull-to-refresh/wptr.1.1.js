@@ -13,6 +13,9 @@ export default function WebPullToRefresh() {
 		// ID of the element holding pull to refresh loading area
 		ptrEl: 'ptr',
 
+		// wrapper element holding scollable
+		bodyEl: document.body,
+
 		// Number of pixels of panning until refresh
 		distanceToRefresh: 70,
 
@@ -42,7 +45,7 @@ export default function WebPullToRefresh() {
 	/**
 	 * Easy shortener for handling adding and removing body classes.
 	 */
-	var bodyClass = document.body.classList;
+	var bodyClass = defaults.bodyEl.classList;
 
 	/**
 	 * Initialize pull to refresh, hammer, and bind pan events.
@@ -54,6 +57,7 @@ export default function WebPullToRefresh() {
 		options = {
 			contentEl: params.contentEl || document.getElementById( defaults.contentEl ),
 			ptrEl: params.ptrEl || document.getElementById( defaults.ptrEl ),
+			bodyEl: params.bodyEl || defaults.bodyEl,
 			distanceToRefresh: params.distanceToRefresh || defaults.distanceToRefresh,
 			loadingFunction: params.loadingFunction || defaults.loadingFunction,
 			resistance: params.resistance || defaults.resistance,
@@ -63,6 +67,8 @@ export default function WebPullToRefresh() {
 		if ( ! options.contentEl || ! options.ptrEl ) {
 			return false;
 		}
+
+		bodyClass = options.bodyEl.classList;
 
 		var h = new Hammer( options.contentEl, options.hammerOptions );
 
@@ -80,7 +86,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panStart = function(e) {
-		pan.startingPositionY = document.body.scrollTop;
+		pan.startingPositionY = options.bodyEl.scrollTop;
 
 		if ( pan.startingPositionY === 0 ) {
 			pan.enabled = true;
@@ -161,7 +167,7 @@ export default function WebPullToRefresh() {
 		options.contentEl.style.transform = options.contentEl.style.webkitTransform = '';
 		options.ptrEl.style.transform = options.ptrEl.style.webkitTransform = '';
 
-		if ( document.body.classList.contains( 'ptr-refresh' ) ) {
+		if ( options.bodyEl.classList.contains( 'ptr-refresh' ) ) {
 			_doLoading();
 		} else {
 			_doReset();
@@ -202,10 +208,10 @@ export default function WebPullToRefresh() {
 
 		var bodyClassRemove = function() {
 			bodyClass.remove( 'ptr-reset' );
-			document.body.removeEventListener( 'transitionend', bodyClassRemove, false );
+			options.bodyEl.removeEventListener( 'transitionend', bodyClassRemove, false );
 		};
 
-		document.body.addEventListener( 'transitionend', bodyClassRemove, false );
+		options.bodyEl.addEventListener( 'transitionend', bodyClassRemove, false );
 	};
 
 	return {
