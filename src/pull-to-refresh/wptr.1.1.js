@@ -86,7 +86,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panStart = function(e) {
-		pan.startingPositionY = document.body.scrollTop;
+		pan.startingPositionY = options.bodyEl.scrollTop;
 
 		if ( pan.startingPositionY === 0 ) {
 			pan.enabled = true;
@@ -167,7 +167,7 @@ export default function WebPullToRefresh() {
 		options.contentEl.style.transform = options.contentEl.style.webkitTransform = '';
 		options.ptrEl.style.transform = options.ptrEl.style.webkitTransform = '';
 
-		if ( document.body.classList.contains( 'ptr-refresh' ) ) {
+		if ( options.bodyEl.classList.contains( 'ptr-refresh' ) ) {
 			_doLoading();
 		} else {
 			_doReset();
@@ -208,10 +208,10 @@ export default function WebPullToRefresh() {
 
 		var bodyClassRemove = function() {
 			bodyClass.remove( 'ptr-reset' );
-			document.body.removeEventListener( 'transitionend', bodyClassRemove, false );
+			options.bodyEl.removeEventListener( 'transitionend', bodyClassRemove, false );
 		};
 
-		document.body.addEventListener( 'transitionend', bodyClassRemove, false );
+		options.bodyEl.addEventListener( 'transitionend', bodyClassRemove, false );
 	};
 
 	return {
