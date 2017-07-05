@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import WebPullToRefresh from '../pull-to-refresh/wptr.1.1';
 
 export default class ReactPullToRefresh extends Component {
