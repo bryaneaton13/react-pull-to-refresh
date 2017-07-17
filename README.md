@@ -1,6 +1,6 @@
 # react-pull-to-refresh
 
-`npm install react-pull-to-refresh`
+`npm install react-pull-to-refresh -S`
 
 A pull to refresh component for the web.
 
@@ -47,40 +47,31 @@ Use the CSS from the example or from [here](https://github.com/apeatling/web-pul
 
 ## All props
 
-React.PropTypes
+PropTypes
 
-- **onRefresh**
- - function *(required)*
-- **icon**
- - React element
- - *default*:
-```html
- <span className="genericon genericon-next"></span>
-```
-- **loading**
- - element
- - *default*:
-```html
-<div className="loading">
-  <span className="loading-ptr-1"></span>
-  <span className="loading-ptr-2"></span>
-  <span className="loading-ptr-3"></span>
-</div>
-```
-- **disabled**
- - boolean
-- **className**
- - string
-- **style**
- - object
-- **distanceToRefresh**
- - number
- - *default*: `70`
-- **resistance**
- - number
- - *default*: `2.5`
-- **hammerOptions**
- - object
+- **onRefresh**: `PropTypes.func.isRequired`
+- **icon**: `PropTypes.element`
+  - *default:*
+  ```html
+  <span className="genericon genericon-next"></span>
+  ```
+- **loading**: `PropTypes.element`
+  - *default:*
+  ```html
+  <div className="loading">
+    <span className="loading-ptr-1"></span>
+    <span className="loading-ptr-2"></span>
+    <span className="loading-ptr-3"></span>
+  </div>
+  ```
+- **disabled**: `PropTypes.bool`
+- **className**: `PropTypes.string`
+- **style**: `PropTypes.object`
+- **distanceToRefresh**: `PropTypes.number`
+  - *default*: `70`
+- **resistance**: `PropTypes.number`
+  - *default*: `2.5`
+- **hammerOptions**: `PropTypes.object`
 
 ## Thanks
 [Andy Peatling](http://apeatling.com/)
