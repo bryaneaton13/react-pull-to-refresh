@@ -61,7 +61,8 @@ export default function WebPullToRefresh() {
 			distanceToRefresh: params.distanceToRefresh || defaults.distanceToRefresh,
 			loadingFunction: params.loadingFunction || defaults.loadingFunction,
 			resistance: params.resistance || defaults.resistance,
-			hammerOptions: params.hammerOptions || {}
+			hammerOptions: params.hammerOptions || {},
+			useContentElScrollTop: params.useContentElScrollTop
 		};
 
 		if ( ! options.contentEl || ! options.ptrEl ) {
@@ -86,7 +87,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panStart = function(e) {
-		pan.startingPositionY = options.bodyEl.scrollTop;
+		pan.startingPositionY = options.useContentElScrollTop ? options.contentEl.scrollTop : options.bodyEl.scrollTop;
 
 		if ( pan.startingPositionY === 0 ) {
 			pan.enabled = true;
