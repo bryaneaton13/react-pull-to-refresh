@@ -1,14 +1,14 @@
 {
-  "name": "react-pull-to-refresh",
+  "name": "@benogle/react-pull-to-refresh",
   "version": "1.1.1",
   "description": "A React component for pull to refresh on the web.",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bryaneaton13/react-pull-to-refresh.git"
+    "url": "https://github.com/benogle/react-pull-to-refresh.git"
   },
   "homepage": "",
-  "bugs": "https://github.com/bryaneaton13/react-pull-to-refresh/issues",
+  "bugs": "https://github.com/benogle/react-pull-to-refresh/issues",
   "directories": {
     "example": "examples"
   },
