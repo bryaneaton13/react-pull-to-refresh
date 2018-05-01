@@ -21,9 +21,9 @@ export default class ReactPullToRefresh extends Component {
   init() {
     if (!this.state.initialized) {
       WebPullToRefresh().init({
-        contentEl: this.refs.refresh,
-        ptrEl: this.refs.ptr,
-        bodyEl: this.refs.body,
+        contentEl: this.refresh,
+        ptrEl: this.ptr,
+        bodyEl: this.body,
         distanceToRefresh: this.props.distanceToRefresh || undefined,
         loadingFunction: this.handleRefresh,
         resistance: this.props.resistance || undefined,
@@ -69,8 +69,8 @@ export default class ReactPullToRefresh extends Component {
     }
 
     return (
-      <div ref="body" {...rest}>
-        <div ref="ptr" className="ptr-element">
+      <div ref={(el) => { this.body = el; }} {...rest}>
+        <div ref={(el) => { this.ptr = el; }} className="ptr-element">
           {icon || <span className="genericon genericon-next"></span>}
           {loading ||
             <div className="loading">
@@ -79,7 +79,7 @@ export default class ReactPullToRefresh extends Component {
               <span className="loading-ptr-3"></span>
            </div>}
         </div>
-        <div ref="refresh" className="refresh-view">
+        <div ref={(el) => { this.refresh = el; }} className="refresh-view">
           {children}
         </div>
       </div>
