@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/bryaneaton13/react-pull-to-refresh.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/bryaneaton13/react-pull-to-refresh",
   "bugs": "https://github.com/bryaneaton13/react-pull-to-refresh/issues",
   "directories": {
     "example": "examples"
