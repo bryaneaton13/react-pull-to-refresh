@@ -88,7 +88,7 @@ export default function WebPullToRefresh() {
 	var _panStart = function(e) {
 		pan.startingPositionY = options.bodyEl.scrollTop;
 
-		if ( pan.startingPositionY === 0 ) {
+		if ( pan.startingPositionY === 0 && e.deltaY > 0 ) {
 			pan.enabled = true;
 		}
 	};
@@ -106,8 +106,12 @@ export default function WebPullToRefresh() {
 		e.preventDefault();
 		pan.distance = e.distance / options.resistance;
 
-		_setContentPan();
-		_setBodyClass();
+		_doLoading();
+
+		setTimeout(function () {
+		  pan.distance = 0;
+		  pan.enabled = false;
+    }, 1000)
 	};
 
 	/**
