@@ -12,14 +12,9 @@ Based on Andy Peatling's [Pull to Refresh for the Web](https://github.com/apeatl
 
 Your refresh handler function takes in `resolve` and `reject` to tell the PullToRefresh component when it's finished.
 
-```javascript
-handleRefresh(resolve, reject) {
-  // do some async code here
-  if (success) {
-    resolve();
-  } else {
-    reject();
-  }
+```typescript
+async handleRefresh() {
+  await asyncCode();
 }
 
 ```
@@ -39,11 +34,9 @@ Where you want to render the component:
 </ReactPullToRefresh>
 ```
 
-
-
 ## CSS
-Use the CSS from the example or from [here](https://github.com/apeatling/web-pull-to-refresh) as a starting point.
 
+Use the CSS from the example or from [here](https://github.com/apeatling/web-pull-to-refresh) as a starting point.
 
 ## All props
 
@@ -51,12 +44,12 @@ PropTypes
 
 - **onRefresh**: `PropTypes.func.isRequired`
 - **icon**: `PropTypes.element`
-  - *default:*
+  - _default:_
   ```html
   <span className="genericon genericon-next"></span>
   ```
 - **loading**: `PropTypes.element`
-  - *default:*
+  - _default:_
   ```html
   <div className="loading">
     <span className="loading-ptr-1"></span>
@@ -68,10 +61,11 @@ PropTypes
 - **className**: `PropTypes.string`
 - **style**: `PropTypes.object`
 - **distanceToRefresh**: `PropTypes.number`
-  - *default*: `70`
+  - _default_: `70`
 - **resistance**: `PropTypes.number`
-  - *default*: `2.5`
+  - _default_: `2.5`
 - **hammerOptions**: `PropTypes.object`
 
 ## Thanks
+
 [Andy Peatling](http://apeatling.com/)
