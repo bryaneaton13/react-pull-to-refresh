@@ -6,7 +6,7 @@ A pull to refresh component for the web.
 
 Based on Andy Peatling's [Pull to Refresh for the Web](https://github.com/apeatling/web-pull-to-refresh)
 
-![Demo GIF](docs/demo.gif)
+![Demo GIF](https://github.com/bryaneaton13/react-pull-to-refresh/blob/master/docs/demo.gif)
 
 ## Usage
 
@@ -31,7 +31,7 @@ Where you want to render the component:
 
 ## CSS
 
-Use the CSS from [the example](playground/app.css) as a starting point.
+Use the CSS from [the example](https://github.com/bryaneaton13/react-pull-to-refresh/blob/master/playground/app.css) as a starting point.
 
 ## All props
 
