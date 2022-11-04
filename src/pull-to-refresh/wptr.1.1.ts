@@ -22,19 +22,14 @@ export default function webPullToRefresh() {
   const defaults = {
     // ID of the element holding pannable content area
     contentEl: 'content',
-
     // ID of the element holding pull to refresh loading area
     ptrEl: 'ptr',
-
     // wrapper element holding scrollable
     bodyEl: document.body,
-
     // Number of pixels of panning until refresh
     distanceToRefresh: 70,
-
     // Pointer to function that does the loading and returns a promise
     loadingFunction: false,
-
     // Dragging resistance level
     resistance: 2.5,
   };
@@ -136,12 +131,9 @@ export default function webPullToRefresh() {
   const _setContentPan = () => {
     // Use transforms to smoothly animate elements on desktop and mobile devices
     if (options.contentEl) {
-      options.contentEl.style.transform =
-        options.contentEl.style.webkitTransform = `translate3d( 0, ${pan.distance}px, 0 )`;
+      options.contentEl.style.transform = `translate3d( 0, ${pan.distance}px, 0 )`;
     }
-    options.ptrEl.style.transform = options.ptrEl.style.webkitTransform = `translate3d( 0, ${
-      pan.distance - options.ptrEl.offsetHeight
-    }px, 0 )`;
+    options.ptrEl.style.transform = `translate3d( 0, ${pan.distance - options.ptrEl.offsetHeight}px, 0 )`;
   };
 
   /**
@@ -166,9 +158,9 @@ export default function webPullToRefresh() {
     e.preventDefault();
 
     if (options.contentEl) {
-      options.contentEl.style.transform = options.contentEl.style.webkitTransform = '';
+      options.contentEl.style.transform = '';
     }
-    options.ptrEl.style.transform = options.ptrEl.style.webkitTransform = '';
+    options.ptrEl.style.transform = '';
 
     if (options.bodyEl.classList.contains('ptr-refresh')) {
       _doLoading();

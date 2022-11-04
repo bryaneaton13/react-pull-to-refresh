@@ -6,7 +6,7 @@ A pull to refresh component for the web.
 
 Based on Andy Peatling's [Pull to Refresh for the Web](https://github.com/apeatling/web-pull-to-refresh)
 
-![Demo GIF](https://github.com/bryaneaton13/react-pull-to-refresh/blob/master/docs/demo.gif)
+![Demo GIF](docs/demo.gif)
 
 ## Usage
 
@@ -21,13 +21,8 @@ async handleRefresh() {
 
 Where you want to render the component:
 
-```xml
-<ReactPullToRefresh
-  onRefresh={this.handleRefresh}
-  className="your-own-class-if-you-want"
-  style={{
-    textAlign: 'center'
-  }}>
+```typescript
+<ReactPullToRefresh onRefresh={handleRefresh} className="your-own-class-if-you-want" style={{ textAlign: 'center' }}>
   <h3>Pull down to refresh</h3>
   <div>{items}</div>
   <div>etc.</div>
@@ -36,19 +31,37 @@ Where you want to render the component:
 
 ## CSS
 
-Use the CSS from the example or from [here](https://github.com/apeatling/web-pull-to-refresh) as a starting point.
+Use the CSS from [the example](playground/app.css) as a starting point.
 
 ## All props
 
-PropTypes
+```typescript
+export interface ReactPullToRefreshProps extends HTMLAttributes<HTMLDivElement> {
+  onRefresh: () => Promise<void>;
+  icon?: ReactNode;
+  loading?: ReactNode;
+  disabled?: boolean;
+  distanceToRefresh?: number;
+  resistance?: number;
+  hammerOptions?: {
+    cssProps?: CssProps | undefined;
+    domEvents?: boolean | undefined;
+    enable?: boolean | ((manager:  HammerManager) => boolean) | undefined;
+    preset?: RecognizerTuple[] | undefined;
+    touchAction?: string | undefined;
+    recognizers?: RecognizerTuple[] | undefined;
+    inputClass?: HammerInput | undefined;
+    inputTarget?: EventTarget | undefined;
+  }
+```
 
-- **onRefresh**: `PropTypes.func.isRequired`
-- **icon**: `PropTypes.element`
+- **onRefresh**: `() => Promise<void>`
+- **icon**: `ReactNode`
   - _default:_
   ```html
   <span className="genericon genericon-next"></span>
   ```
-- **loading**: `PropTypes.element`
+- **loading**: `ReactNode`
   - _default:_
   ```html
   <div className="loading">
@@ -57,14 +70,26 @@ PropTypes
     <span className="loading-ptr-3"></span>
   </div>
   ```
-- **disabled**: `PropTypes.bool`
-- **className**: `PropTypes.string`
-- **style**: `PropTypes.object`
-- **distanceToRefresh**: `PropTypes.number`
+- **disabled**: `boolean`
+- **className**: `string`
+- **style**: `object`
+- **distanceToRefresh**: `number`
   - _default_: `70`
-- **resistance**: `PropTypes.number`
+- **resistance**: `number`
   - _default_: `2.5`
-- **hammerOptions**: `PropTypes.object`
+- **hammerOptions**: `HammerOptions`
+  ```typescript
+  interface HammerOptions {
+    cssProps?: CssProps | undefined;
+    domEvents?: boolean | undefined;
+    enable?: boolean | ((manager: HammerManager) => boolean) | undefined;
+    preset?: RecognizerTuple[] | undefined;
+    touchAction?: string | undefined;
+    recognizers?: RecognizerTuple[] | undefined;
+    inputClass?: HammerInput | undefined;
+    inputTarget?: EventTarget | undefined;
+  }
+  ```
 
 ## Thanks
 

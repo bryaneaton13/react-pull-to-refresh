@@ -2,13 +2,13 @@ import { HTMLAttributes, ReactNode, useEffect, useRef } from 'react';
 import webPullToRefresh from '../pull-to-refresh/wptr.1.1';
 
 export interface ReactPullToRefreshProps extends HTMLAttributes<HTMLDivElement> {
-  onRefresh: Function;
+  onRefresh: () => Promise<void>;
   icon?: ReactNode;
   loading?: ReactNode;
   disabled?: boolean;
   distanceToRefresh?: number;
   resistance?: number;
-  hammerOptions?: object;
+  hammerOptions?: HammerOptions;
 }
 
 function ReactPullToRefresh(props: ReactPullToRefreshProps) {
@@ -29,7 +29,7 @@ function ReactPullToRefresh(props: ReactPullToRefreshProps) {
       webPullToRefresh().init({
         contentEl: refreshRef.current,
         ptrEl: ptrRef.current,
-        bodyEl: bodyRef.current,
+        bodyEl: document.body,
         distanceToRefresh,
         loadingFunction: handleRefresh,
         resistance,
