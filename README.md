@@ -91,6 +91,12 @@ export interface ReactPullToRefreshProps extends HTMLAttributes<HTMLDivElement> 
   }
   ```
 
+## Running the code
+
+1. Checkout the repo
+2. Run `npm install`
+3. Run `npm run play` to open the code from `/playground`
+
 ## Thanks
 
 [Andy Peatling](http://apeatling.com/)

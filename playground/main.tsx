@@ -7,7 +7,7 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 function Play() {
   const [items, setItems] = useState([1, 2, 3, 4]);
   async function handleRefresh() {
-    await delay(250);
+    await delay(500);
     setItems((items) => [...items, items[items.length - 1] + 1]);
   }
   return (
