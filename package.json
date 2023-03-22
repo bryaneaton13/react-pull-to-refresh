@@ -1,92 +1,91 @@
 {
-	"name": "react-pull-to-refresh",
-	"type": "module",
-	"version": "2.0.1",
-	"description": "A React component for pull to refresh on the web.",
-	"authors": [
-		"Bryan Eaton"
-	],
-	"scripts": {
-		"play": "npm -C playground run dev",
-		"dev": "npm run build --watch",
-		"build": "tsup src/index.ts --format esm,cjs --dts --external react",
-		"lint": "eslint src/**/*.ts* --fix --ignore-path .gitignore",
-		"lint:ts": "tsc --noEmit",
-		"format": "prettier src/**/*.ts* --write --ignore-path .gitignore",
-		"prepublishOnly": "npm run build",
-		"release": "bumpp && npm publish"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/bryaneaton13/react-pull-to-refresh.git"
-	},
-	"homepage": "https://github.com/bryaneaton13/react-pull-to-refresh",
-	"bugs": "https://github.com/bryaneaton13/react-pull-to-refresh/issues",
-	"license": "MIT",
-	"sideEffects": false,
-	"main": "./dist/index.js",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"exports": {
-		".": {
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.js"
-		},
-		"./*": "./*"
-	},
-	"typesVersions": {
-		"*": {
-			"*": [
-				"./dist/*",
-				"./*"
-			]
-		}
-	},
-	"files": [
-		"dist"
-	],
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org"
-	},
-	"peerDependencies": {
-		"react": ">=16.8.0"
-	},
-	"tags": [
-		"react",
-		"pull-to-refresh",
-		"refresh",
-		"web-pull-to-refresh"
-	],
-	"keywords": [
-		"react",
-		"react-component",
-		"pull-to-refresh",
-		"refresh",
-		"web-pull-to-refresh"
-	],
-	"devDependencies": {
-		"@types/hammerjs": "^2.0.41",
-		"@types/node": "^18.7.18",
-		"@types/react": "^18.0.21",
-		"@types/react-dom": "^18.0.8",
-		"@vitejs/plugin-react": "^2.1.0",
-		"bumpp": "^8.2.1",
-		"eslint": "^8.23.1",
-		"eslint-config-kentcdodds": "^20.4.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-prettier": "^4.2.1",
-		"eslint-plugin-react": "^7.31.8",
-		"happy-dom": "^6.0.4",
-		"prettier": "^2.7.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"tsup": "^6.2.3",
-		"typescript": "^4.8.3",
-		"vite": "^3.1.3"
-	},
-	"dependencies": {
-		"hammerjs": "^2.0.8"
-	}
+  "name": "react-pull-to-refresh",
+  "type": "module",
+  "version": "2.0.1",
+  "description": "A React component for pull to refresh on the web.",
+  "authors": [
+    "Bryan Eaton"
+  ],
+  "scripts": {
+    "play": "cd playground && vite",
+    "dev": "npm run build --watch",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "lint": "eslint src/**/*.ts* --fix --ignore-path .gitignore",
+    "lint:ts": "tsc --noEmit",
+    "format": "prettier src/**/*.ts* --write --ignore-path .gitignore",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryaneaton13/react-pull-to-refresh.git"
+  },
+  "homepage": "https://github.com/bryaneaton13/react-pull-to-refresh",
+  "bugs": "https://github.com/bryaneaton13/react-pull-to-refresh/issues",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "tags": [
+    "react",
+    "pull-to-refresh",
+    "refresh",
+    "web-pull-to-refresh"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "pull-to-refresh",
+    "refresh",
+    "web-pull-to-refresh"
+  ],
+  "devDependencies": {
+    "@types/hammerjs": "^2.0.41",
+    "@types/node": "^18.15.5",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "bumpp": "^9.0.0",
+    "eslint": "^8.36.0",
+    "eslint-config-kentcdodds": "^20.5.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^6.7.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8"
+  }
 }
